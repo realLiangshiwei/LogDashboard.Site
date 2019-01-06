@@ -15,7 +15,11 @@ namespace LogDashboard.site
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .ConfigureLogging(x => { x.ClearProviders(); })
-                .UseNLog();
+                .ConfigureLogging(x =>
+                    {
+                        x.ClearProviders();
+                        x.SetMinimumLevel(LogLevel.Warning);
+                    })
+                    .UseNLog();
     }
 }
