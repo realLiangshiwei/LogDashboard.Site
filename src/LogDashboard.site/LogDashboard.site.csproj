@@ -8,6 +8,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\fontawesome-webfont.eot" />
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\fontawesome-webfont.svg" />
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\doc\gitbook\fonts\fontawesome\FontAwesome.otf" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-anchor-navigation-ex-toc\lib\config.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-anchor-navigation-ex-toc\lib\log.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-anchor-navigation-ex-toc\lib\plugin.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-fontsettings\fontsettings.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-fontsettings\website.css" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-highlight\ebook.css" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-highlight\website.css" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-livereload\plugin.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-lunr\lunr.min.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-lunr\search-lunr.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-search\lunr.min.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-search\search-engine.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-search\search.css" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-search\search.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook-plugin-sharing\buttons.js" />
+    <None Include="wwwroot\doc\gitbook\gitbook.js" />
+    <None Include="wwwroot\doc\gitbook\images\apple-touch-icon-precomposed-152.png" />
+    <None Include="wwwroot\doc\gitbook\images\favicon.ico" />
+    <None Include="wwwroot\doc\gitbook\style.css" />
+    <None Include="wwwroot\doc\gitbook\theme.js" />
+    <None Include="wwwroot\doc\index.html" />
+    <None Include="wwwroot\doc\kuai-su-ru-men.html" />
+    <None Include="wwwroot\doc\logdashboard-pei-zhi.html" />
+    <None Include="wwwroot\doc\nlog.config-pei-zhi-shi-li.html" />
+    <None Include="wwwroot\doc\shi-yong-shu-ju-ku-yuan.html" />
+    <None Include="wwwroot\doc\shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" />
+    <None Include="wwwroot\doc\zi-ding-yi-logmodel.html" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
