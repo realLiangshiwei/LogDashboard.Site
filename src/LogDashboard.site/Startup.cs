@@ -35,6 +35,11 @@ namespace LogDashboard.site
                 opt.CustomLogModel<DashboardDemoLogModel>();
             });
 
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                options.HttpsPort = 443;
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
