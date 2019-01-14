@@ -28,8 +28,6 @@ namespace LogDashboard.site
             services.AddLogDashboard(opt =>
             {
                 opt.CustomLogModel<DashboardDemoLogModel>();
-                opt.FileEndDelimiter = "|end";
-                opt.FileFieldDelimiter = "|";
             });
 
             services.AddHttpsRedirection(options =>
