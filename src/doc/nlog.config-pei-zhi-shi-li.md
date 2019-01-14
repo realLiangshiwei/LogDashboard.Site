@@ -1,6 +1,8 @@
-# nlog.config 配置示例
+# config 配置示例
 
-## 文件源 nlog.config 示例
+## nlog
+
+### 文件源 nlog.config 示例
 
 ```text
 <?xml version="1.0" encoding="utf-8" ?>
@@ -24,7 +26,7 @@
 
 ```
 
-## 数据库源 nlog.config 示例
+### 数据库源 nlog.config 示例
 
 ```text
 <?xml version="1.0" encoding="utf-8" ?>
@@ -180,3 +182,28 @@
 </nlog>
 ```
 
+## log4net
+
+### 数据库源 log4net.config 示例
+
+```text
+<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+    <file value="LogFiles/"/>
+    <preserveLogFileNameExtension value="true" />
+    <datePattern value="yyyy-MM-dd'.log'" />
+    <staticLogFileName value="false"/>
+    <appendToFile value="true" />
+    <maximumFileSize value="100KB" />
+    <maxSizeRollBackups value="2" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date || %5level || %logger || %message || %exception ||end %newline" />
+    </layout>
+  </appender>
+  <root>
+    <level value="ALL"/>
+    <appender-ref ref="RollingFile" />
+  </root>
+</log4net>
+```

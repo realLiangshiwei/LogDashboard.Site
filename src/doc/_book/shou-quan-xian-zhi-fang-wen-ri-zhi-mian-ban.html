@@ -1,12 +1,12 @@
-﻿
+
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>自定义日志模型 · GitBook</title>
+        <title>授权访问 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="LogModel提供了五个基本日志的属性 LongDate、Logger、Level、Message、Exception。除以之外还可以自定义属性。本文源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/CustomLogModel">
+        <meta name="description" content="在生产环境自然不是所有人都可以访问日志面板,我们需要配置授权过滤器或登陆用户具有某个角色或权限才可以访问。本文源代码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/UseAuthorization">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" />
+    <link rel="next" href="use log4net.html" />
     
     
-    <link rel="prev" href="shi-yong-shu-ju-ku-yuan.html" />
+    <link rel="prev" href="zi-ding-yi-logmodel.html" />
     
 
     </head>
@@ -93,9 +93,9 @@
         
         
     
-        <li class="chapter " data-level="1.1" data-path="./index.html">
+        <li class="chapter " data-level="1.1" data-path="./">
             
-                <a href="./index.html">
+                <a href="./">
             
                     
                     快速入门
@@ -119,7 +119,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="zi-ding-yi-logmodel.html">
+        <li class="chapter " data-level="1.3" data-path="zi-ding-yi-logmodel.html">
             
                 <a href="zi-ding-yi-logmodel.html">
             
@@ -132,7 +132,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html">
+        <li class="chapter active" data-level="1.4" data-path="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html">
             
                 <a href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html">
             
@@ -214,7 +214,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >自定义日志模型</a>
+        <a href="." >授权访问</a>
     </h1>
 </div>
 
@@ -229,11 +229,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;logmodel"><b>1. </b>&#x81EA;&#x5B9A;&#x4E49;LogModel</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;</a></li></ul></ul></div><a href="#&#x81EA;&#x5B9A;&#x4E49;logmodel" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x81EA;&#x5B9A;&#x4E49;logmodel"><a name="&#x81EA;&#x5B9A;&#x4E49;logmodel" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;logmodel"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x81EA;&#x5B9A;&#x4E49;LogModel</h1>
-<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</h2>
-<p>&#x786E;&#x4FDD;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x4E0A;DotnetCore SDK &#xFF0C;&#x540C;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;DotnetCore Empty&#x9879;&#x76EE; &#x3002;&#x6253;&#x5F00;PowerShell&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;</p>
-<pre><code>dotnet new empty
-</code></pre><h2 id="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><a name="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</h2>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;"><b>1. </b>&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;</a></li></ul></ul></div><a href="#&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;"><a name="&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;" class="anchor-navigation-ex-anchor" href="#&#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6388;&#x6743;&#x9650;&#x5236;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;</h1>
+<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</h2>
+<p>&#x6253;&#x5F00;VisualStudio&#x521B;&#x5EFA;&#x5E26;&#x6709;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7684;Asp.Net Core&#x9879;&#x76EE;&#xFF0C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x9009;&#x62E9;&#x4E2A;&#x4EBA;&#x7528;&#x6237;&#x8D26;&#x6237;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;</p>
+<p><img src="gitbook/assets/image%20%282%29.png" alt=""></p>
+<p>&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x6CE8;&#x518C;&#x767B;&#x9646;&#x7684;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</p>
+<h2 id="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><a name="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</h2>
 <p>&#x4F7F;&#x7528;VSCode&#x6216;VisualStudio&#x6253;&#x5F00;&#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3002;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#x9009;&#x7528;Nlog</p>
 <pre><code class="lang-text">Install-Package NLog.Web.AspNetCore
 </code></pre>
@@ -250,11 +251,7 @@
        .Build();
 </code></pre>
 <p>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Nlog.config&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5E76;&#x53F3;&#x952E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;&#x590D;&#x5236;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF08;&#x59CB;&#x7EC8;&#x590D;&#x5236;)&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;Nlog.config&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</p>
-<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5206;&#x9694;&#x7B26;&#x624D;&#x53EF;&#x4EE5;&#x88AB;NLogDashboard&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;||&#x4E0E;||end&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; TODO</p>
-<p>layout&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x4E86; ${var:application}&#x4E0E;${var:requestMethod}&#x53D8;&#x91CF;&#xFF0C;  ${machinename}&#x9884;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</p>
-<blockquote>
-<p>&#x5173;&#x4E8E;&#x66F4;&#x591A;&#x7684;Nlog&#x9884;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x8BF7;&#x53C2;&#x9605; <a href="https://nlog-project.org/config/?tab=layout-renderers" target="_blank">Nlog&#x6587;&#x6863;</a></p>
-</blockquote>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5206;&#x9694;&#x7B26;&#x624D;&#x53EF;&#x4EE5;&#x88AB;NLogDashboard&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;||&#x4E0E;||end&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="logdashboard-pei-zhi.html#wen-jian-yuan-ri-zhi-fen-ge-fu">LogDashboard&#x914D;&#x7F6E;</a></p>
 <pre><code class="lang-text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
 &lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -264,8 +261,9 @@
   &lt;variable name=&quot;myvar&quot; value=&quot;myvalue&quot;/&gt;
 
   &lt;targets&gt;
+
     &lt;target xsi:type=&quot;file&quot; name=&quot;File&quot; fileName=&quot;${basedir}/logs/${shortdate}.log&quot;
-            layout=&quot;${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||${var:application}||${var:requestMethod}||${machinename}||end&quot; /&gt;
+            layout=&quot;${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||end&quot; /&gt;
   &lt;/targets&gt;
 
   &lt;rules&gt;
@@ -277,29 +275,34 @@
 <p>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x65F6;&#x5B89;&#x88C5;LogDashboard</p>
 <pre><code class="lang-text">Install-Package LogDashboard
 </code></pre>
-<p>&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x6DFB;&#x52A0;ApplicationLogModel&#x7C7B;&#xFF0C;&#x5E76;&#x7EE7;&#x627F;&#x81EA;LogModel</p>
-<pre><code class="lang-text">public class ApplicationLogModel : LogModel
+<p>&#x6DFB;&#x52A0;&#x7C7B;SamplesAuthorizationFilter &#xFF0C;&#x8BA9;&#x5B83;&#x7EE7;&#x627F;&#x81EA;<strong>ILogDashboardAuthorizationFilter</strong>&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x5C06;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6388;&#x6743;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x7684;&#x5224;&#x65AD;&#x4E86;IP&#x662F;&#x5426;&#x662F;&#x672C;&#x5730;</p>
+<blockquote>
+<p><strong>ILogDashboardAuthorizationFilter&#x63A5;&#x53E3;&#x662F;LogDashboard&#x7684;&#x6388;&#x6743;&#x8FC7;&#x6EE4;&#x5668;&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x8FDB;&#x5165;&#x9762;&#x677F;&#x4E4B;&#x524D;&#x4F1A;&#x6267;&#x884C;&#x6240;&#x6709;&#x5176;&#x88AB;&#x6CE8;&#x518C;&#x7684;&#x6D3E;&#x751F;&#x7C7B;</strong></p>
+</blockquote>
+<pre><code class="lang-text">public class SamplesAuthorizationFilter : ILogDashboardAuthorizationFilter
 {
-    public string Application { get; set; }
-
-    public string RequestMethod { get; set; }
-
-    public string MachineName { get; set; }
+    public bool Authorization(LogDashboardContext context)
+    {
+        var url = context.HttpContext.Request.GetDisplayUrl();
+        return url.Contains(&quot;localhost&quot;) || url.Contains(&quot;127.0.0.1&quot;);
+    }
 }
 </code></pre>
-<p>&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;Application&#x3001;RequestMethod&#x4E0E;MachineName&#x5C5E;&#x6027;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6253;&#x5F00;Startup.cs&#x6211;&#x4EEC;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;  </p>
+<p>&#x6253;&#x5F00;Startup.cs&#x6211;&#x4EEC;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;  </p>
 <ol>
-<li>&#x5728;ConfigureServices&#x65B9;&#x6CD5;&#x4E2D;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x4E0E;&#x53D8;&#x91CF;&#xFF0C;&#x4F7F;&#x7528;option&#x7684;CuomstLogModel&#x65B9;&#x6CD5;&#x5C06;ApplicationLogModel&#x505A;&#x4E3A;&#x53CD;&#x7701;&#x53C2;&#x6570;&#x4F20;&#x9012;</li>
+<li>&#x5728;ConfigureServices&#x65B9;&#x6CD5;&#x4E2D;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5E76;&#x4F7F;&#x7528;option&#x7684;<strong>AddAuthorizationFilter</strong>&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x9664;&#x4E86;<strong>AddAuthorizationFilter</strong>&#x65B9;&#x6CD5;&#x8FD8;&#x4F7F;&#x7528;&#x4E86;<strong>AddAuthorizeAttribute</strong>&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x4E86;<strong>AuthorizeAttribute&#xFF0C;</strong>&#x5B83;&#x662F;Asp.Net core Mvc&#x7684;&#x81EA;&#x5E26;Attribute&#x7528;&#x6765;&#x8FDB;&#x884C;&#x6388;&#x6743;&#xFF0C;&#x8FD9;&#x65F6;&#x65E5;&#x5FD7;&#x9762;&#x677F;&#x5C06;&#x53EA;&#x6709;&#x767B;&#x9646;&#x7528;&#x6237;&#x624D;&#x53EF;&#x4EE5;&#x770B;&#x5230;</li>
 </ol>
 <blockquote>
-<p>&#x56E0;&#x4E3A;MachineName&#x662F;Nlog&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8D4B;&#x503C;</p>
+<p><strong>AddAuthorizeAttribute&#x8FD8;&#x6709;&#x89D2;&#x8272;&#x4E0E;&#x6743;&#x9650;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x5177;&#x6709;&#x6307;&#x5B9A;&#x89D2;&#x8272;&#x6216;&#x6743;&#x9650;&#x7684;&#x7528;&#x6237;&#x624D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x9762;&#x677F;</strong></p>
+<p><strong>AddAuthorizeAttribute&#x65B9;&#x6CD5;&#x63A5;&#x6536;IAuthorizeData&#x7684;&#x6D3E;&#x751F;&#x7C7B;</strong></p>
 </blockquote>
 <pre><code class="lang-text">public void ConfigureServices(IServiceCollection services)
 {
-    // &#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;
-    LogManager.Configuration.Variables[&quot;application&quot;] = &quot;CustomLogModel&quot;;
-    LogManager.Configuration.Variables[&quot;requestMethod&quot;] = &quot;Get&quot;;
-    services.AddLogDashboard(opt =&gt; { opt.CustomLogModel&lt;ApplicationLogModel&gt;(); });
+     services.AddLogDashboard(opt =&gt;
+    {
+        opt.AddAuthorizeAttribute(new AuthorizeAttribute());
+        opt.AddAuthorizationFilter(new SamplesAuthorizationFilter());
+    });
 }
 </code></pre>
 <p>&#x5173;&#x4E8E;&#x66F4;&#x591A;&#x7684;&#x914D;&#x7F6E;&#x8BF7;&#x53C2;&#x9605; <a href="logdashboard-pei-zhi.html">LogDashboard&#x914D;&#x7F6E;</a></p>
@@ -321,8 +324,8 @@
     });
 }
 </code></pre>
-<p>&#x5927;&#x529F;&#x544A;&#x6210;&#xFF0C;&#x8FD9;&#x65F6;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BFC;&#x822A;&#x5230;/logdashboard&#xFF0C;&#x5E76;&#x70B9;&#x51FB;&#x65E5;&#x5FD7;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x8BE6;&#x60C5;&#x67E5;&#x770B;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</p>
-<p><img src="gitbook/assets/custominfo.png" alt=""></p>
+<p>&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x9879;&#x76EE;&#xFF0C;&#x5BFC;&#x822A;&#x5230;/logdashboard&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x767B;&#x9646;&#x7528;&#x6237;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x8DF3;&#x8F6C;&#x5230;&#x767B;&#x9646;&#x9875;&#x9762;&#x8981;&#x6C42;&#x7528;&#x6237;&#x767B;&#x9646;</p>
+<p><img src="gitbook/assets/image%20%281%29.png" alt=""></p>
 <h2 id="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><a name="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;</h2>
 <p>&#x6253;&#x5F00;.csproj&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x884C; , &#x539F;&#x56E0;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/aspnet/Mvc/issues/6021" target="_blank">https://github.com/aspnet/Mvc/issues/6021</a></p>
 <pre><code class="lang-text">&lt;PropertyGroup&gt;
@@ -356,12 +359,12 @@
 
             
                 
-                <a href="shi-yong-shu-ju-ku-yuan.html" class="navigation navigation-prev " aria-label="Previous page: 使用数据库源">
+                <a href="zi-ding-yi-logmodel.html" class="navigation navigation-prev " aria-label="Previous page: 自定义日志模型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" class="navigation navigation-next " aria-label="Next page: 授权访问">
+                <a href="use log4net.html" class="navigation navigation-next " aria-label="Next page: 使用log4net">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -372,7 +375,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"LogModel提供了五个基本日志的属性 LongDate、Logger、Level、Message、Exception。除以之外还可以自定义属性。本文源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/CustomLogModel","title":"自定义日志模型","level":"1.3","depth":1,"next":{"title":"授权访问","level":"1.4","depth":1,"path":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","ref":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","articles":[]},"previous":{"title":"使用数据库源","level":"1.2","depth":1,"path":"shi-yong-shu-ju-ku-yuan.md","ref":"shi-yong-shu-ju-ku-yuan.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zi-ding-yi-logmodel.md","mtime":"2019-01-07T08:01:37.911Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"在生产环境自然不是所有人都可以访问日志面板,我们需要配置授权过滤器或登陆用户具有某个角色或权限才可以访问。本文源代码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/UseAuthorization","title":"授权访问","level":"1.4","depth":1,"next":{"title":"使用log4net","level":"1.5","depth":1,"path":"use log4net.md","ref":"use log4net.md","articles":[]},"previous":{"title":"自定义日志模型","level":"1.3","depth":1,"path":"zi-ding-yi-logmodel.md","ref":"zi-ding-yi-logmodel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","mtime":"2019-01-07T08:01:37.910Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

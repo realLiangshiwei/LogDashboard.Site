@@ -1,12 +1,12 @@
-﻿
+
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>自定义日志模型 · GitBook</title>
+        <title>快速入门 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="LogModel提供了五个基本日志的属性 LongDate、Logger、Level、Message、Exception。除以之外还可以自定义属性。本文源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/CustomLogModel">
+        <meta name="description" content="本文源码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" />
+    <link rel="next" href="shi-yong-shu-ju-ku-yuan.html" />
     
-    
-    <link rel="prev" href="shi-yong-shu-ju-ku-yuan.html" />
     
 
     </head>
@@ -93,9 +91,9 @@
         
         
     
-        <li class="chapter " data-level="1.1" data-path="./index.html">
+        <li class="chapter active" data-level="1.1" data-path="./">
             
-                <a href="./index.html">
+                <a href="./">
             
                     
                     快速入门
@@ -119,7 +117,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="zi-ding-yi-logmodel.html">
+        <li class="chapter " data-level="1.3" data-path="zi-ding-yi-logmodel.html">
             
                 <a href="zi-ding-yi-logmodel.html">
             
@@ -214,7 +212,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >自定义日志模型</a>
+        <a href="." >快速入门</a>
     </h1>
 </div>
 
@@ -229,9 +227,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;logmodel"><b>1. </b>&#x81EA;&#x5B9A;&#x4E49;LogModel</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;</a></li></ul></ul></div><a href="#&#x81EA;&#x5B9A;&#x4E49;logmodel" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x81EA;&#x5B9A;&#x4E49;logmodel"><a name="&#x81EA;&#x5B9A;&#x4E49;logmodel" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;logmodel"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x81EA;&#x5B9A;&#x4E49;LogModel</h1>
-<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</h2>
-<p>&#x786E;&#x4FDD;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x4E0A;DotnetCore SDK &#xFF0C;&#x540C;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;DotnetCore Empty&#x9879;&#x76EE; &#x3002;&#x6253;&#x5F00;PowerShell&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><b>1. </b>&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;!</a></li></ul></ul></div><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5FEB;&#x901F;&#x5165;&#x95E8;"><a name="&#x5FEB;&#x901F;&#x5165;&#x95E8;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5FEB;&#x901F;&#x5165;&#x95E8;</h1>
+<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</h2>
+<p>&#x786E;&#x4FDD;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x4E86;DotNetCore SDK&#xFF0C;&#x6253;&#x5F00;PowerShell&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;,&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;AspNetCore&#x7A7A;&#x9879;&#x76EE;</p>
 <pre><code>dotnet new empty
 </code></pre><h2 id="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><a name="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</h2>
 <p>&#x4F7F;&#x7528;VSCode&#x6216;VisualStudio&#x6253;&#x5F00;&#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3002;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#x9009;&#x7528;Nlog</p>
@@ -250,11 +248,7 @@
        .Build();
 </code></pre>
 <p>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Nlog.config&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5E76;&#x53F3;&#x952E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;&#x590D;&#x5236;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF08;&#x59CB;&#x7EC8;&#x590D;&#x5236;)&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;Nlog.config&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</p>
-<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5206;&#x9694;&#x7B26;&#x624D;&#x53EF;&#x4EE5;&#x88AB;NLogDashboard&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;||&#x4E0E;||end&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; TODO</p>
-<p>layout&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x4E86; ${var:application}&#x4E0E;${var:requestMethod}&#x53D8;&#x91CF;&#xFF0C;  ${machinename}&#x9884;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</p>
-<blockquote>
-<p>&#x5173;&#x4E8E;&#x66F4;&#x591A;&#x7684;Nlog&#x9884;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x8BF7;&#x53C2;&#x9605; <a href="https://nlog-project.org/config/?tab=layout-renderers" target="_blank">Nlog&#x6587;&#x6863;</a></p>
-</blockquote>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5206;&#x9694;&#x7B26;&#x624D;&#x53EF;&#x4EE5;&#x88AB;NLogDashboard&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;||&#x4E0E;||end&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="logdashboard-pei-zhi.html#wen-jian-yuan-ri-zhi-fen-ge-fu">LogDashboard&#x914D;&#x7F6E;</a></p>
 <pre><code class="lang-text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
 &lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -264,8 +258,9 @@
   &lt;variable name=&quot;myvar&quot; value=&quot;myvalue&quot;/&gt;
 
   &lt;targets&gt;
+
     &lt;target xsi:type=&quot;file&quot; name=&quot;File&quot; fileName=&quot;${basedir}/logs/${shortdate}.log&quot;
-            layout=&quot;${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||${var:application}||${var:requestMethod}||${machinename}||end&quot; /&gt;
+            layout=&quot;${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||end&quot; /&gt;
   &lt;/targets&gt;
 
   &lt;rules&gt;
@@ -277,29 +272,13 @@
 <p>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x65F6;&#x5B89;&#x88C5;LogDashboard</p>
 <pre><code class="lang-text">Install-Package LogDashboard
 </code></pre>
-<p>&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x6DFB;&#x52A0;ApplicationLogModel&#x7C7B;&#xFF0C;&#x5E76;&#x7EE7;&#x627F;&#x81EA;LogModel</p>
-<pre><code class="lang-text">public class ApplicationLogModel : LogModel
-{
-    public string Application { get; set; }
-
-    public string RequestMethod { get; set; }
-
-    public string MachineName { get; set; }
-}
-</code></pre>
-<p>&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;Application&#x3001;RequestMethod&#x4E0E;MachineName&#x5C5E;&#x6027;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6253;&#x5F00;Startup.cs&#x6211;&#x4EEC;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;  </p>
+<p>&#x6253;&#x5F00;Startup.cs&#x6211;&#x4EEC;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;  </p>
 <ol>
-<li>&#x5728;ConfigureServices&#x65B9;&#x6CD5;&#x4E2D;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x4E0E;&#x53D8;&#x91CF;&#xFF0C;&#x4F7F;&#x7528;option&#x7684;CuomstLogModel&#x65B9;&#x6CD5;&#x5C06;ApplicationLogModel&#x505A;&#x4E3A;&#x53CD;&#x7701;&#x53C2;&#x6570;&#x4F20;&#x9012;</li>
+<li>&#x5728;ConfigureServices&#x65B9;&#x6CD5;&#x4E2D;&#x914D;&#x7F6E;&#x670D;&#x52A1;</li>
 </ol>
-<blockquote>
-<p>&#x56E0;&#x4E3A;MachineName&#x662F;Nlog&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8D4B;&#x503C;</p>
-</blockquote>
 <pre><code class="lang-text">public void ConfigureServices(IServiceCollection services)
 {
-    // &#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;
-    LogManager.Configuration.Variables[&quot;application&quot;] = &quot;CustomLogModel&quot;;
-    LogManager.Configuration.Variables[&quot;requestMethod&quot;] = &quot;Get&quot;;
-    services.AddLogDashboard(opt =&gt; { opt.CustomLogModel&lt;ApplicationLogModel&gt;(); });
+    services.AddLogDashboard();
 }
 </code></pre>
 <p>&#x5173;&#x4E8E;&#x66F4;&#x591A;&#x7684;&#x914D;&#x7F6E;&#x8BF7;&#x53C2;&#x9605; <a href="logdashboard-pei-zhi.html">LogDashboard&#x914D;&#x7F6E;</a></p>
@@ -321,9 +300,9 @@
     });
 }
 </code></pre>
-<p>&#x5927;&#x529F;&#x544A;&#x6210;&#xFF0C;&#x8FD9;&#x65F6;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BFC;&#x822A;&#x5230;/logdashboard&#xFF0C;&#x5E76;&#x70B9;&#x51FB;&#x65E5;&#x5FD7;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x8BE6;&#x60C5;&#x67E5;&#x770B;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</p>
-<p><img src="gitbook/assets/custominfo.png" alt=""></p>
-<h2 id="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><a name="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF01;</h2>
+<p>&#x5927;&#x529F;&#x544A;&#x6210;&#xFF0C;&#x8FD9;&#x65F6;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BFC;&#x822A;&#x5230;/logdashboard&#x3002;&#x8FD9;&#x65F6;&#x5C31;&#x80FD;&#x770B;&#x5230;&#x65E5;&#x5FD7;&#x9762;&#x677F;&#x4E86;  </p>
+<p><img src="gitbook/assets/dashboard.png" alt=""></p>
+<h2 id="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;"><a name="&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;!</h2>
 <p>&#x6253;&#x5F00;.csproj&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x884C; , &#x539F;&#x56E0;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/aspnet/Mvc/issues/6021" target="_blank">https://github.com/aspnet/Mvc/issues/6021</a></p>
 <pre><code class="lang-text">&lt;PropertyGroup&gt;
    &lt;MvcRazorExcludeRefAssembliesFromPublish&gt;false&lt;/MvcRazorExcludeRefAssembliesFromPublish&gt;
@@ -356,12 +335,8 @@
 
             
                 
-                <a href="shi-yong-shu-ju-ku-yuan.html" class="navigation navigation-prev " aria-label="Previous page: 使用数据库源">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" class="navigation navigation-next " aria-label="Next page: 授权访问">
+                <a href="shi-yong-shu-ju-ku-yuan.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 使用数据库源">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -372,7 +347,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"LogModel提供了五个基本日志的属性 LongDate、Logger、Level、Message、Exception。除以之外还可以自定义属性。本文源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/CustomLogModel","title":"自定义日志模型","level":"1.3","depth":1,"next":{"title":"授权访问","level":"1.4","depth":1,"path":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","ref":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","articles":[]},"previous":{"title":"使用数据库源","level":"1.2","depth":1,"path":"shi-yong-shu-ju-ku-yuan.md","ref":"shi-yong-shu-ju-ku-yuan.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zi-ding-yi-logmodel.md","mtime":"2019-01-07T08:01:37.911Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"本文源码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog","title":"快速入门","level":"1.1","depth":1,"next":{"title":"使用数据库源","level":"1.2","depth":1,"path":"shi-yong-shu-ju-ku-yuan.md","ref":"shi-yong-shu-ju-ku-yuan.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-07T08:01:37.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

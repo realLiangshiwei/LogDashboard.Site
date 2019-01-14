@@ -8,6 +8,8 @@
 
 * [授权访问](shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md)
 
+* [使用log4net](use log4net.md)
+
 * [配置](logdashboard-pei-zhi.md)
 
-* [nlog.config](nlog.config-pei-zhi-shi-li.md)
+* [config示例](nlog.config-pei-zhi-shi-li.md)

@@ -1,12 +1,12 @@
-﻿
+
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>快速入门 · GitBook</title>
+        <title>使用log4net · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="本文源码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog">
+        <meta name="description" content="logdashboard支持log4net文件源,本示例源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/UseLog4net">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="shi-yong-shu-ju-ku-yuan.html" />
+    <link rel="next" href="logdashboard-pei-zhi.html" />
     
+    
+    <link rel="prev" href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" />
     
 
     </head>
@@ -91,9 +93,9 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./index.html">
+        <li class="chapter " data-level="1.1" data-path="./">
             
-                <a href="./index.html">
+                <a href="./">
             
                     
                     快速入门
@@ -143,7 +145,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="use log4net.html">
+        <li class="chapter active" data-level="1.5" data-path="use log4net.html">
             
                 <a href="use log4net.html">
             
@@ -212,7 +214,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >快速入门</a>
+        <a href="." >使用log4net</a>
     </h1>
 </div>
 
@@ -227,46 +229,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><b>1. </b>&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;!</a></li></ul></ul></div><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5FEB;&#x901F;&#x5165;&#x95E8;"><a name="&#x5FEB;&#x901F;&#x5165;&#x95E8;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5FEB;&#x901F;&#x5165;&#x95E8;</h1>
-<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;netcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NetCore&#x9879;&#x76EE;</h2>
-<p>&#x786E;&#x4FDD;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x4E86;DotNetCore SDK&#xFF0C;&#x6253;&#x5F00;PowerShell&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;,&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;AspNetCore&#x7A7A;&#x9879;&#x76EE;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;log4net"><b>1. </b>&#x4F7F;&#x7528;log4net</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;"><b>1.2. </b>&#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;logdashboard"><b>1.3. </b>&#x5B89;&#x88C5;LogDashboard</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;"><b>1.4. </b>&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;!</a></li></ul></ul></div><a href="#&#x4F7F;&#x7528;log4net" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F7F;&#x7528;log4net"><a name="&#x4F7F;&#x7528;log4net" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;log4net"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4F7F;&#x7528;log4net</h1>
+<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notcore&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;NotCore&#x9879;&#x76EE;</h2>
+<p>&#x786E;&#x4FDD;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x4E0A;DotnetCore SDK &#xFF0C;&#x540C;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;DotnetCore Empty&#x9879;&#x76EE; &#x3002;&#x6253;&#x5F00;PowerShell&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;</p>
 <pre><code>dotnet new empty
-</code></pre><h2 id="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><a name="&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;Nlog&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</h2>
-<p>&#x4F7F;&#x7528;VSCode&#x6216;VisualStudio&#x6253;&#x5F00;&#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3002;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#x9009;&#x7528;Nlog</p>
-<pre><code class="lang-text">Install-Package NLog.Web.AspNetCore
+</code></pre><h2 id="&#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;"><a name="&#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;log4net&#x7EC4;&#x4EF6;&#x5305;</h2>
+<p>&#x4F7F;&#x7528;visualstudio&#x6253;&#x5F00;&#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x65F6;&#x5B89;&#x88C5;log4net&#x7A0B;&#x5E8F;&#x5305;</p>
+<pre><code>Install-Package Microsoft.Extensions.Logging.Log4Net.AspNetCore
+</code></pre><p>&#x6253;&#x5F00;Startup.cs&#x5728;Configure&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;log4net&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x590D;&#x5236;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6DFB;&#x52A0;&#x5230;Configure&#x65B9;&#x6CD5;&#x4E2D;</p>
+<pre><code class="lang-csharp">loggerFactory.AddLog4Net(<span class="hljs-keyword">new</span> Log4NetProviderOptions
+{
+    PropertyOverrides =
+        <span class="hljs-keyword">new</span> List&lt;NodeInfo&gt;
+        {
+            <span class="hljs-keyword">new</span> NodeInfo { XPath = <span class="hljs-string">&quot;/log4net/appender/file[last()]&quot;</span>, Attributes = <span class="hljs-keyword">new</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">string</span>&gt; { { <span class="hljs-string">&quot;value&quot;</span>, $<span class="hljs-string">&quot;{AppContext.BaseDirectory}LogFiles/&quot;</span> } } }
+        }
+});
 </code></pre>
-<p>&#x6253;&#x5F00;Program.cs&#x5728;CreateWebHostBuilder&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;Nlog&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x590D;&#x5236;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x8986;&#x76D6;CreateWebHostBuilder&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-text">public static IWebHost CreateWebHostBuilder(string[] args) =&gt;
-    WebHost.CreateDefaultBuilder(args)
-       .UseStartup&lt;Startup&gt;()
-       .ConfigureLogging(logging =&gt;
-       {
-           logging.ClearProviders();
-           logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
-       })
-       .UseNLog()
-       .Build();
-</code></pre>
-<p>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Nlog.config&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5E76;&#x53F3;&#x952E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;&#x590D;&#x5236;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF08;&#x59CB;&#x7EC8;&#x590D;&#x5236;)&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;Nlog.config&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</p>
+<p>&#x6DFB;&#x52A0;log4net.config&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5E76;&#x53F3;&#x952E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;&#x590D;&#x5236;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF08;&#x59CB;&#x7EC8;&#x590D;&#x5236;)&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;log4net.config&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</p>
 <p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5206;&#x9694;&#x7B26;&#x624D;&#x53EF;&#x4EE5;&#x88AB;NLogDashboard&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;||&#x4E0E;||end&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="logdashboard-pei-zhi.html#wen-jian-yuan-ri-zhi-fen-ge-fu">LogDashboard&#x914D;&#x7F6E;</a></p>
 <pre><code class="lang-text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
-      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-      autoReload=&quot;true&quot;
-      throwExceptions=&quot;false&quot;
-      internalLogLevel=&quot;Off&quot; internalLogFile=&quot;c:\temp\nlog-internal.log&quot;&gt;
-  &lt;variable name=&quot;myvar&quot; value=&quot;myvalue&quot;/&gt;
-
-  &lt;targets&gt;
-
-    &lt;target xsi:type=&quot;file&quot; name=&quot;File&quot; fileName=&quot;${basedir}/logs/${shortdate}.log&quot;
-            layout=&quot;${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||end&quot; /&gt;
-  &lt;/targets&gt;
-
-  &lt;rules&gt;
-    &lt;logger name=&quot;*&quot; minlevel=&quot;Debug&quot; writeTo=&quot;file&quot; /&gt;
-  &lt;/rules&gt;
-&lt;/nlog&gt;
+&lt;log4net&gt;
+  &lt;appender name=&quot;RollingFile&quot; type=&quot;log4net.Appender.RollingFileAppender&quot;&gt;
+    &lt;file value=&quot;LogFiles/&quot;/&gt;
+    &lt;preserveLogFileNameExtension value=&quot;true&quot; /&gt;
+    &lt;datePattern value=&quot;yyyy-MM-dd&apos;.log&apos;&quot; /&gt;
+    &lt;staticLogFileName value=&quot;false&quot;/&gt;
+    &lt;appendToFile value=&quot;true&quot; /&gt;
+    &lt;maximumFileSize value=&quot;100KB&quot; /&gt;
+    &lt;maxSizeRollBackups value=&quot;2&quot; /&gt;
+    &lt;layout type=&quot;log4net.Layout.PatternLayout&quot;&gt;
+      &lt;conversionPattern value=&quot;%date || %5level || %logger || %message || %exception ||end %newline&quot; /&gt;
+    &lt;/layout&gt;
+  &lt;/appender&gt;
+  &lt;root&gt;
+    &lt;level value=&quot;ALL&quot;/&gt;
+    &lt;appender-ref ref=&quot;RollingFile&quot; /&gt;
+  &lt;/root&gt;
+&lt;/log4net&gt;
 </code></pre>
 <h2 id="&#x5B89;&#x88C5;logdashboard"><a name="&#x5B89;&#x88C5;logdashboard" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;logdashboard"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5B89;&#x88C5;LogDashboard</h2>
 <p>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x65F6;&#x5B89;&#x88C5;LogDashboard</p>
@@ -335,8 +335,12 @@
 
             
                 
+                <a href="shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.html" class="navigation navigation-prev " aria-label="Previous page: 授权访问">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="shi-yong-shu-ju-ku-yuan.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 使用数据库源">
+                
+                <a href="logdashboard-pei-zhi.html" class="navigation navigation-next " aria-label="Next page: 配置">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -347,7 +351,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"本文源码在 https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog","title":"快速入门","level":"1.1","depth":1,"next":{"title":"使用数据库源","level":"1.2","depth":1,"path":"shi-yong-shu-ju-ku-yuan.md","ref":"shi-yong-shu-ju-ku-yuan.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-07T08:01:37.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"logdashboard支持log4net文件源,本示例源码在https://github.com/liangshiw/LogDashboard/tree/master/samples/UseLog4net","title":"使用log4net","level":"1.5","depth":1,"next":{"title":"配置","level":"1.6","depth":1,"path":"logdashboard-pei-zhi.md","ref":"logdashboard-pei-zhi.md","articles":[]},"previous":{"title":"授权访问","level":"1.4","depth":1,"path":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","ref":"shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex-toc","livereload"],"pluginsConfig":{"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"use log4net.md","mtime":"2019-01-14T01:38:34.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:54:19.559Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
