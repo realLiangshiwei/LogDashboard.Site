@@ -1,8 +1,8 @@
-﻿using LogDashboard.Model;
+﻿using LogDashboard.Models;
 
 namespace LogDashboard.site
 {
-    public class DashboardDemoLogModel : LogModel
+    public class DashboardDemoLogModel : RequestTraceLogModel
     {
         public string Machinename { get; set; }
 
