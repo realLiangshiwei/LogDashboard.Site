@@ -22,7 +22,14 @@ namespace LogDashboard.site.Pages
 
         public void OnGet()
         {
+            _logger.LogInformation("info message");
+            _logger.LogDebug("debug message");
 
+            _logger.LogError("debug message", new ArgumentException("this is a test exception"));
+
+            _logger.LogWarning("warn message");
+
+            _logger.LogTrace("trace message");
         }
 
         public void OnPost()
