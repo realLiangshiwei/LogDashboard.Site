@@ -10,7 +10,7 @@ description: >-
 
 打开VisualStudio创建带有身份验证的Asp.Net Core项目，身份验证选择个人用户账户。如下图所示
 
-![](gitbook/assets/image%20%282%29.png)
+![](https://github.com/liangshiw/LogDashboard.Site/tree/1f492ab0a4699225dd35f9bd6a90f03e927d4c4b/src/doc/gitbook/assets/image%20%282%29.png)
 
 这时我们已经拥有一个带有注册登陆的Web应用程序
 
@@ -39,9 +39,7 @@ public static IWebHost CreateWebHostBuilder(string[] args) =>
 
 添加一个Nlog.config到项目中，并右键文件设置为复制到输出目录（始终复制\)，以下是Nlog.config的全部内容
 
-
 配置文件需要分隔符才可以被NLogDashboard解析，默认是\|\|与\|\|end，当然这些可以自定义，请参见 [LogDashboard配置](logdashboard-pei-zhi.md#wen-jian-yuan-ri-zhi-fen-ge-fu)
-
 
 ```text
 <?xml version="1.0" encoding="utf-8" ?>
@@ -62,7 +60,6 @@ public static IWebHost CreateWebHostBuilder(string[] args) =>
     <logger name="*" minlevel="Debug" writeTo="file" />
   </rules>
 </nlog>
-
 ```
 
 ## 安装LogDashboard
@@ -88,8 +85,8 @@ public class SamplesAuthorizationFilter : ILogDashboardAuthorizationFilter
 }
 ```
 
-打开Startup.cs我们要做两件事  
-  
+打开Startup.cs我们要做两件事
+
 1. 在ConfigureServices方法中配置服务并使用option的**AddAuthorizationFilter**方法添加我们的自定义过滤器，除了**AddAuthorizationFilter**方法还使用了**AddAuthorizeAttribute**方法添加了**AuthorizeAttribute，**它是Asp.Net core Mvc的自带Attribute用来进行授权，这时日志面板将只有登陆用户才可以看到
 
 > **AddAuthorizeAttribute还有角色与权限参数可以限制具有指定角色或权限的用户才可以访问日志面板**
@@ -107,11 +104,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-
 关于更多的配置请参阅 [LogDashboard配置](logdashboard-pei-zhi.md)
 
-
-2. 在Configure方法中配置中间件
+1. 在Configure方法中配置中间件
 
 ```text
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -132,7 +127,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 这时我们启动项目，导航到/logdashboard，因为我们没有登陆用户，它会自动跳转到登陆页面要求用户登陆
 
-![](gitbook/assets/image%20%281%29.png)
+![](https://github.com/liangshiw/LogDashboard.Site/tree/1f492ab0a4699225dd35f9bd6a90f03e927d4c4b/src/doc/gitbook/assets/image%20%281%29.png)
 
 ## 发布时需要注意！
 

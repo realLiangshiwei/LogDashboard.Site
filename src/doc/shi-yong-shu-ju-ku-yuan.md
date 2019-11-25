@@ -9,7 +9,7 @@ description: >-
 
 确保机器上安装上DotnetCore SDK ，同快速入门一样，我们需要一个DotnetCore Empty项目 。打开PowerShell运行以下命令
 
-```
+```text
 dotnet new empty
 ```
 
@@ -153,17 +153,17 @@ public static IWebHost CreateWebHostBuilder(string[] args) =>
     SET QUOTED_IDENTIFIER ON
     GO
     CREATE TABLE [dbo].[Log](
-	    [Id] [int] IDENTITY(1,1) NOT NULL,
-	    [MachineName] [nvarchar](50) NOT NULL,
-	    [LongDate] [datetime2] NOT NULL,
-	    [Level] [nvarchar](50) NOT NULL,
-	    [Message] [nvarchar](max) NOT NULL,
-	    [Logger] [nvarchar](250) NULL,
-	    [Callsite] [nvarchar](max) NULL,
-	    [Exception] [nvarchar](max) NULL,
+        [Id] [int] IDENTITY(1,1) NOT NULL,
+        [MachineName] [nvarchar](50) NOT NULL,
+        [LongDate] [datetime2] NOT NULL,
+        [Level] [nvarchar](50) NOT NULL,
+        [Message] [nvarchar](max) NOT NULL,
+        [Logger] [nvarchar](250) NULL,
+        [Callsite] [nvarchar](max) NULL,
+        [Exception] [nvarchar](max) NULL,
      CONSTRAINT [PK_dbo.Log] PRIMARY KEY CLUSTERED 
     (
-	    [Id] ASC
+        [Id] ASC
     )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
     ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     GO
@@ -209,8 +209,8 @@ public static IWebHost CreateWebHostBuilder(string[] args) =>
 Install-Package LogDashboard
 ```
 
-打开Startup.cs我们要做两件事  
-  
+打开Startup.cs我们要做两件事
+
 1. 在ConfigureServices方法中配置服务
 
 ```text
@@ -226,11 +226,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-
 关于更多的配置请参阅 [LogDashboard配置](logdashboard-pei-zhi.md)
 
-
-2. 在Configure方法中配置中间件
+1. 在Configure方法中配置中间件
 
 ```text
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -249,9 +247,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-大功告成，这时运行项目，在浏览器中导航到/logdashboard。这时就能看到日志面板了  
+大功告成，这时运行项目，在浏览器中导航到/logdashboard。这时就能看到日志面板了
 
-![](gitbook/assets/databaseboard.png)
+![](https://github.com/liangshiw/LogDashboard.Site/tree/1f492ab0a4699225dd35f9bd6a90f03e927d4c4b/src/doc/gitbook/assets/databaseboard.png)
 
 ## 发布时需要注意！
 

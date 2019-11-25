@@ -68,5 +68,3 @@ pathMatch默认值是 /logdashboard，可以在Startup.cs添加中间件时进�
             this IApplicationBuilder builder, string pathMatch = "/LogDashboard")
 ```
 
-
-

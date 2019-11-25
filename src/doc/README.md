@@ -6,11 +6,15 @@ description: >-
 
 # 快速入门
 
-## 创建一个NetCore项目
+{% hint style="info" %}
+本文示例源码在 [https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog](https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog)
+{% endhint %}
+
+## 创建一个NetCore项目 
 
 确保机器上安装了DotNetCore SDK，打开PowerShell运行以下命令,我们将创建一个AspNetCore空项目
 
-```
+```text
 dotnet new empty
 ```
 
@@ -22,26 +26,26 @@ dotnet new empty
 Install-Package NLog.Web.AspNetCore
 ```
 
-打开Program.cs在CreateWebHostBuilder方法中添加Nlog中间件，复制以下代码覆盖CreateWebHostBuilder方法
+打开`Program.cs`在`CreateHostBuilder`方法中添加Nlog中间件，复制以下代码覆盖`CreateHostBuilder` 方法
 
 ```text
-public static IWebHost CreateWebHostBuilder(string[] args) =>
-    WebHost.CreateDefaultBuilder(args)
-       .UseStartup<Startup>()
-       .ConfigureLogging(logging =>
-       {
-           logging.ClearProviders();
-           logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
-       })
-       .UseNLog()
-       .Build();
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder=>
+        {
+            webBuilder.UseStartup<Startup>()
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                    logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
+                })
+                .UseNLog();
+        });
 ```
 
 添加一个Nlog.config到项目中，并右键文件设置为复制到输出目录（始终复制\)，以下是Nlog.config的全部内容
 
-
-配置文件需要分隔符才可以被NLogDashboard解析，默认是\|\|与\|\|end，当然这些可以自定义，请参见 [LogDashboard配置](logdashboard-pei-zhi.md#wen-jian-yuan-ri-zhi-fen-ge-fu)
-
+配置文件需要分隔符才可以被LogDashboard解析，默认是\|\|与\|\|end，当然这些可以自定义，请参见 [LogDashboard配置](logdashboard-pei-zhi.md#wen-jian-yuan-ri-zhi-fen-ge-fu)
 
 ```text
 <?xml version="1.0" encoding="utf-8" ?>
@@ -50,32 +54,35 @@ public static IWebHost CreateWebHostBuilder(string[] args) =>
       autoReload="true"
       throwExceptions="false"
       internalLogLevel="Off" internalLogFile="c:\temp\nlog-internal.log">
+
   <variable name="myvar" value="myvalue"/>
 
   <targets>
 
     <target xsi:type="file" name="File" fileName="${basedir}/logs/${shortdate}.log"
             layout="${longdate}||${level}||${logger}||${message}||${exception:format=ToString:innerFormat=ToString:maxInnerExceptionLevel=10:separator=\r\n}||end" />
+
   </targets>
 
   <rules>
     <logger name="*" minlevel="Debug" writeTo="file" />
+
   </rules>
 </nlog>
 
 ```
 
-## 安装LogDashboard
+## 安装 LogDashboard
 
-准备工作已经结束，这时安装LogDashboard
+准备工作已经结束，这时安装 LogDashboard
 
 ```text
 Install-Package LogDashboard
 ```
 
-打开Startup.cs我们要做两件事  
-  
-1. 在ConfigureServices方法中配置服务
+打开Startup.cs我们要做两件事
+
+1. 在`ConfigureServices`方法中配置服务
 
 ```text
 public void ConfigureServices(IServiceCollection services)
@@ -84,11 +91,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-
 关于更多的配置请参阅 [LogDashboard配置](logdashboard-pei-zhi.md)
 
-
-2. 在Configure方法中配置中间件
+1. 在`Configure`方法中配置中间件
 
 ```text
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -107,16 +112,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-大功告成，这时运行项目，在浏览器中导航到/logdashboard。这时就能看到日志面板了  
+大功告成，这时运行项目，在浏览器中导航到/logdashboard。
 
-![](gitbook/assets/dashboard.png)
+enjoy
 
-## 发布时需要注意!
 
-打开.csproj项目文件添加以下行 , 原因请参见 [https://github.com/aspnet/Mvc/issues/6021](https://github.com/aspnet/Mvc/issues/6021)
 
-```text
-<PropertyGroup>
-   <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
- </PropertyGroup>
-```

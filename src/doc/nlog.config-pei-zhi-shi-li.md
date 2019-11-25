@@ -23,7 +23,6 @@
     <logger name="*" minlevel="Debug" writeTo="file" />
   </rules>
 </nlog>
-
 ```
 
 ### 数据库源 nlog.config 示例
@@ -134,17 +133,17 @@
     SET QUOTED_IDENTIFIER ON
     GO
     CREATE TABLE [dbo].[Log](
-	    [Id] [int] IDENTITY(1,1) NOT NULL,
-	    [MachineName] [nvarchar](50) NOT NULL,
-	    [LongDate] [datetime2] NOT NULL,
-	    [Level] [nvarchar](50) NOT NULL,
-	    [Message] [nvarchar](max) NOT NULL,
-	    [Logger] [nvarchar](250) NULL,
-	    [Callsite] [nvarchar](max) NULL,
-	    [Exception] [nvarchar](max) NULL,
+        [Id] [int] IDENTITY(1,1) NOT NULL,
+        [MachineName] [nvarchar](50) NOT NULL,
+        [LongDate] [datetime2] NOT NULL,
+        [Level] [nvarchar](50) NOT NULL,
+        [Message] [nvarchar](max) NOT NULL,
+        [Logger] [nvarchar](250) NULL,
+        [Callsite] [nvarchar](max) NULL,
+        [Exception] [nvarchar](max) NULL,
      CONSTRAINT [PK_dbo.Log] PRIMARY KEY CLUSTERED 
     (
-	    [Id] ASC
+        [Id] ASC
     )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
     ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     GO
@@ -207,3 +206,4 @@
   </root>
 </log4net>
 ```
+
