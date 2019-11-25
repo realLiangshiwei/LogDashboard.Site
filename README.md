@@ -1,4 +1,2 @@
-# README
-
-LogDashboard.Site
+# Initial page
 
