@@ -10,7 +10,7 @@ description: >-
 本文示例源码在 [https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog](https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog)
 {% endhint %}
 
-## 创建一个NetCore项目 
+## 创建一个NetCore项目
 
 确保机器上安装了DotNetCore SDK，打开PowerShell运行以下命令,我们将创建一个AspNetCore空项目
 

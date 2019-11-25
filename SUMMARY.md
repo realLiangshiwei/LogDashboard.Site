@@ -1,4 +1,20 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [README](README.md)
+* [src](src/README.md)
+  * [LogDashboard.site](src/logdashboard.site/README.md)
+    * [wwwroot](src/logdashboard.site/wwwroot/README.md)
+      * [lib](src/logdashboard.site/wwwroot/lib/README.md)
+        * [jquery-validation](src/logdashboard.site/wwwroot/lib/jquery-validation/README.md)
+          * [The MIT License \(MIT\)](src/logdashboard.site/wwwroot/lib/jquery-validation/license.md)
+        * [@fortawesome/fontawesome-free - The Official Font Awesome 5 NPM package](src/logdashboard.site/wwwroot/lib/fontawesome-free.md)
+  * [快速入门](src/doc/README.md)
+    * [Summary](src/doc/summary.md)
+    * [Untitled](src/doc/untitled.md)
+    * [授权限制访问日志面板](src/doc/shou-quan-xian-zhi-fang-wen-ri-zhi-mian-ban.md)
+    * [使用数据库源](src/doc/shi-yong-shu-ju-ku-yuan.md)
+    * [config 配置示例](src/doc/nlog.config-pei-zhi-shi-li.md)
+    * [使用log4net](src/doc/use-log4net.md)
+    * [自定义LogModel](src/doc/zi-ding-yi-logmodel.md)
+    * [LogDashboard 配置](src/doc/logdashboard-pei-zhi.md)
 
