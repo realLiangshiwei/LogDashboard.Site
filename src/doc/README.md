@@ -6,9 +6,7 @@ description: >-
 
 # 快速入门
 
-{% hint style="info" %}
-本文示例源码在 [https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog](https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog)
-{% endhint %}
+> 本文示例源码在 [https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog](https://github.com/liangshiw/LogDashboard/tree/master/samples/DotNetCoreEmptyUseNlog)
 
 ## 创建一个NetCore项目
 
