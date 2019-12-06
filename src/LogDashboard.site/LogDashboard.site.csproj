@@ -29,7 +29,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="LogDashboard" Version="1.4.1" />
+    <PackageReference Include="LogDashboard" Version="1.4.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
   </ItemGroup>
